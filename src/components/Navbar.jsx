@@ -6,7 +6,7 @@ export const Navbar = ({ toggleSidebar }) => {
      
      <div className="navCom-1 flex flex-row gap-x-8">
      
-          <div className="img-1 cursor-pointer" onClick={toggleSidebar}>
+          <div className="img-1 cursor-pointer xs:w-[55px] h-[35px] md:w-[65.96px] h-[50px]" onClick={toggleSidebar} >
       <Image
       src={"/HeroSection/Group 3055.png"}
       width={65.96}
@@ -16,7 +16,7 @@ export const Navbar = ({ toggleSidebar }) => {
 
           </div>
 
-          <div className="img-2">
+          <div className="img-2 xs:w-[150px] h-[35px] md:w-[184.9px] h-[50px]">
         <Image
         src={"/HeroSection/Group 3385.png"}
         width={184.9}
@@ -28,7 +28,7 @@ export const Navbar = ({ toggleSidebar }) => {
 
      </div>
 
-     <div className="img-center">
+     <div className="img-center w-[180px] h-[40px] md:w-[204.38px] h-[50px]">
         <Image
         src={"/HeroSection/Group 3005.png"}
         width={204.38}
@@ -40,9 +40,10 @@ export const Navbar = ({ toggleSidebar }) => {
      </div>
 
      <div className="navCom-3 flex flex-row gap-x-4">
-       <div><p className="text-white ">Just for you</p></div>
+       <div className="flex flex-row gap-x-6">
+        <p className="text-white  hidden sm:block ">Just for you</p>
 
-        <div className="img-4">
+        <div className="img-4 hidden sm:block">
         <Image
         src={"/HeroSection/Group 3035.png"}
         width={37.31}
@@ -52,8 +53,8 @@ export const Navbar = ({ toggleSidebar }) => {
         
  
          </div>
-
-         <div className="links flex flex-row gap-x-20">
+</div>
+         <div className="links flex flex-row gap-x-10 md:gap-x-20">
 
             <div className="Globe">
                 <Image 
@@ -61,7 +62,7 @@ export const Navbar = ({ toggleSidebar }) => {
                 width={25}
                 height={25}
                 alt=""
-                className="w-[25px] h-[25px"
+                className="w-[25px] h-[25px]"
                 />
             </div>
 
