@@ -9,6 +9,7 @@ export const Navbar = ({ toggleSidebar }) => {
           <div className="img-1 cursor-pointer xs:w-[55px] h-[35px] md:w-[65.96px] h-[50px]" onClick={toggleSidebar} >
       <Image
       src={"/HeroSection/Group 3055.png"}
+      alt=""
       width={65.96}
       height={50}
       className="w-[65.96px] h-[50px]"
@@ -19,6 +20,7 @@ export const Navbar = ({ toggleSidebar }) => {
           <div className="img-2 xs:w-[150px] h-[35px] md:w-[184.9px] h-[50px]">
         <Image
         src={"/HeroSection/Group 3385.png"}
+        alt=""
         width={184.9}
         height={50}
         className="w-[184.9px] h-[50px]"
@@ -31,6 +33,7 @@ export const Navbar = ({ toggleSidebar }) => {
      <div className="img-center w-[180px] h-[40px] md:w-[204.38px] h-[50px]">
         <Image
         src={"/HeroSection/Group 3005.png"}
+        alt=""
         width={204.38}
         height={50}
         className="w-[204.38px] h-[50px]"
@@ -46,6 +49,7 @@ export const Navbar = ({ toggleSidebar }) => {
         <div className="img-4 hidden sm:block">
         <Image
         src={"/HeroSection/Group 3035.png"}
+         alt=""
         width={37.31}
         height={25}
         className="w-[37.31px] h-[25px]"

@@ -661,6 +661,7 @@ function FirstSection() {
                         {/* <div className=""> */}
                         <Image
                           src={"/navlinks/Group 3005.png"}
+                            alt=""
                           width={59.82}
                           height={14.63}
                           className="w-[59.82px] h-[14.63px]"
@@ -931,13 +932,39 @@ function FirstSection() {
             </div>
        
             <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+           
+           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
+           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
+     
+       </div>
+       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234568</p>
             </div>
 
             <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+           
+           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
+           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
+     
+            </div>
+
+       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234569</p>
             </div>
 
             <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+            
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+           
+           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
+           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
+     
+          </div>
+
+       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234570</p>
             </div>
+
             </div>
       </div>
     </>
