@@ -578,7 +578,7 @@ import { Pagination, Navigation } from "swiper/modules";
 function FirstSection() {
   return (
     <>
-      <div className="FirstSection bg-[#ffffff] mt-0">
+      <div className="FirstSection bg-[#ffffff] mt-0 w-[1920px] h-auto">
         <div className="top flex flex-row justify-between w-auto h-auto pt-10">
           <div className="w-[159px] h-[40px]">
             <p className="font-Lato text-[30px]">FEATURED</p>

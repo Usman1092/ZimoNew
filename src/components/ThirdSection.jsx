@@ -9,8 +9,8 @@ export const ThirdSection = () => {
 
         <div className="w-[657px] h-[131px]   ">
         <p className="font-Lato text-[40px] font-bold text-start mt-0">Weekly NewsLetter</p>
-        {/* <p className="font-Lato text-[20px] w-[657px] h-[57px] text-start mt-5 ">Receive the beautifully curated selection of the latest listings
-        from around the world and find out what's trending</p> */}
+        <p className="font-Lato text-[20px] w-[657px] h-[57px] text-start mt-5 ">Receive the beautifully curated selection of the latest listings
+        from around the world and find out what's trending</p>
         </div>
 
          <div className="w-[500px] h-[189.51px]    flex flex-col ">
