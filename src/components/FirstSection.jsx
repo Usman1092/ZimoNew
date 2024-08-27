@@ -562,20 +562,30 @@
 
 // export default FirstSection;
 
+
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import Countdown from "react-countdown";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+//progress bar
+import {
+  CircularProgressbar,
+  buildStyles,
+  linearGradient,
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
-
+const percentage = 23;
 function FirstSection() {
+  const zeroPad = (value, length) => String(value).padStart(length, "0");
   return (
     <>
       <div className="FirstSection bg-[#ffffff] mt-0 w-[1920px] h-auto">
@@ -621,9 +631,9 @@ function FirstSection() {
             className="mySwiper "
           >
             {/* Card 1 with Nested Swiper */}
+
             <SwiperSlide>
               <div className="card-1 border border-black w-[454px] h-[574px] ">
-                {/* Nested Swiper inside Card 1 */}
                 <div className="inner-swiper-container mt-0 relative ">
                   <Swiper
                     spaceBetween={10}
@@ -656,19 +666,19 @@ function FirstSection() {
                           </div>
                         </div>
                       </div>
-                      
-                      <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
-                        {/* <div className=""> */}
-                        <Image
-                          src={"/navlinks/Group 3005.png"}
-                            alt=""
-                          width={59.82}
-                          height={14.63}
-                          className="w-[59.82px] h-[14.63px]"
-                        />
-                        {/* </div> */}
 
-                        <div className="flex flex-col w-full   ">
+                      <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                        <div className="">
+                          <Image
+                            src={"/navlinks/Group 3005.png"}
+                            alt=""
+                            width={59.82}
+                            height={14.63}
+                            className="w-[59.82px] h-[14.63px]"
+                          />
+                        </div>
+
+                        <div className="Center flex flex-col w-full   ">
                           <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
                             {" "}
                             5,000,000 GBP
@@ -679,8 +689,19 @@ function FirstSection() {
                           </div>
                         </div>
 
-                        <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                        <div className="w-[114px] h-[19px]   text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
                           {" "}
+                          <div className=" absolute bottom-[-10px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                            <CircularProgressbar
+                              value={percentage}
+                              text={`${percentage}%`}
+                              styles={buildStyles({
+                                textColor: "white",
+                                pathColor: "turquoise",
+                                trailColor: "black",
+                              })}
+                            />
+                          </div>
                           <Image
                             src={"/New Folder/g12.png"}
                             width={69.28}
@@ -727,21 +748,55 @@ function FirstSection() {
                     />
                   </Swiper>
                 </div>
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 999993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+                </div>
               </div>
             </SwiperSlide>
-            
-
             {/* Card 2 with Nested Swiper */}
             <SwiperSlide>
               <div className="card-2 border border-black w-[454px] h-[574px]">
-                {/* <Image
-                  src={"/img-2.png"}
-                  alt="Building 2"
-                  width={454}
-                  height={574}
-                  className="w-[454px] h-[574px]"
-                /> */}
-
                 {/* Nested Swiper inside Card 2 */}
                 <div className="inner-swiper-container mt-0">
                   <Swiper
@@ -758,7 +813,7 @@ function FirstSection() {
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
                   >
-                    <Image
+                    {/* <Image
                       src={"/New Folder/topGrad.png"}
                       alt="gradient 1"
                       width={100}
@@ -768,11 +823,11 @@ function FirstSection() {
 
                     <Image
                       src={"/New Folder/bottomGrad.png"}
-                      alt="gradient 1"
+                      alt="gradient 2"
                       width={100}
                       height={100}
                       className="w-[454px] h-[159px] absolute bottom-0 z-20"
-                    />
+                    /> */}
                     <SwiperSlide>
                       <Image
                         src={"/img-2.png"}
@@ -781,7 +836,79 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "turquoise",
+                                  trailColor: "black",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                       <Image
                         src={"/Img-3.png"}
@@ -790,8 +917,142 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-10px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "turquoise",
+                                  trailColor: "black",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
                   </Swiper>
+                </div>
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
@@ -815,21 +1076,6 @@ function FirstSection() {
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
                   >
-                    <Image
-                      src={"/New Folder/topGrad.png"}
-                      alt="gradient 1"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute top-0 z-20"
-                    />
-
-                    <Image
-                      src={"/New Folder/bottomGrad.png"}
-                      alt="gradient 1"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute bottom-0 z-20"
-                    />
                     <SwiperSlide>
                       <Image
                         src={"/card-1.png"}
@@ -838,7 +1084,79 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "turquoise",
+                                  trailColor: "black",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                       <Image
                         src={"/img-2.png"}
@@ -847,8 +1165,143 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "turquoise",
+                                  trailColor: "black",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
                   </Swiper>
+                </div>
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 4029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
@@ -872,21 +1325,6 @@ function FirstSection() {
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
                   >
-                    <Image
-                      src={"/New Folder/topGrad.png"}
-                      alt="gradient 1"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute top-0 z-20"
-                    />
-
-                    <Image
-                      src={"/New Folder/bottomGrad.png"}
-                      alt="gradient 1"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute bottom-0 z-20"
-                    />
                     <SwiperSlide>
                       <Image
                         src={"/card-4.png"}
@@ -895,7 +1333,79 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "turquoise",
+                                  trailColor: "black",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                       <Image
                         src={"/Img-3.png"}
@@ -904,8 +1414,144 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#F8E231",
+                                  trailColor: "#000000",
+                                  // trailColor: "linear-gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </SwiperSlide>
                   </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
@@ -918,111 +1564,68 @@ function FirstSection() {
           </Swiper>
         </div>
 
-
-          <div className="flex  gap-x-4 px-12 border border-black mt-4 ">
-           <div className="w-[454px] h-[58.17px] bg-[#333] relative  rounded-xl">
-
+        <div className="flex  gap-x-4 px-12 border border-black mt-4 ">
+          <div className="w-[454px] h-[58.17px] bg-[#333] relative  rounded-xl">
             <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
-           
-                <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
-                <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
-          
+              <p className="absolute left-0 text-white font-Lato text-[19px]">
+                &pound; 25.00 GBP
+              </p>
+              <p className="absolute right-0 text-white font-Lato text-[19px]">
+                BUY ENTRY NOW
+              </p>
             </div>
-            <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234567</p>
-            </div>
-       
-            <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
-            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
-           
-           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
-           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
-     
-       </div>
-       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234568</p>
-            </div>
-
-            <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
-
-            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
-           
-           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
-           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
-     
-            </div>
-
-       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234569</p>
-            </div>
-
-            <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
-            
-            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
-           
-           <p className="absolute left-0 text-white font-Lato text-[19px]">&pound; 25.00 GBP</p>
-           <p className="absolute right-0 text-white font-Lato text-[19px]">BUY ENTRY NOW</p>
-     
+            <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">
+              #ZM7861234567
+            </p>
           </div>
 
-       <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">#ZM7861234570</p>
+          <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+              <p className="absolute left-0 text-white font-Lato text-[19px]">
+                &pound; 25.00 GBP
+              </p>
+              <p className="absolute right-0 text-white font-Lato text-[19px]">
+                BUY ENTRY NOW
+              </p>
+            </div>
+            <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">
+              #ZM7861234568
+            </p>
+          </div>
+
+          <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+              <p className="absolute left-0 text-white font-Lato text-[19px]">
+                &pound; 25.00 GBP
+              </p>
+              <p className="absolute right-0 text-white font-Lato text-[19px]">
+                BUY ENTRY NOW
+              </p>
             </div>
 
+            <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">
+              #ZM7861234569
+            </p>
+          </div>
+
+          <div className="w-[454px] h-[58.17px] bg-[#333] border border-white  rounded-xl">
+            <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
+              <p className="absolute left-0 text-white font-Lato text-[19px]">
+                &pound; 25.00 GBP
+              </p>
+              <p className="absolute right-0 text-white font-Lato text-[19px]">
+                BUY ENTRY NOW
+              </p>
             </div>
+
+            <p className="absolute right-4 bottom-1 font-Lato text-[9px] text-white">
+              #ZM7861234570
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
 }
 
 export default FirstSection;
-
-{
-  /* <Swiper
-            spaceBetween={30}
-            slidesPerView={4}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper2 pt-0"
-          >
-            <SwiperSlide>
-              <Image
-                src={"/card-1.png"}
-                alt="Building 1"
-                width={100}
-                height={100}
-                className=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src={"/img-2.png"}
-                alt="Building 1"
-                width={100}
-                height={100}
-                className=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src={"/Img-3.png"}
-                alt="Building 1"
-                width={100}
-                height={100}
-                className=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src={"/card-4.png"}
-                alt="Building 1"
-                width={100}
-                height={100}
-                className=""
-              />
-            </SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
-          </Swiper>   */
-}
