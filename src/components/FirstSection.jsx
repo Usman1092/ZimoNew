@@ -306,7 +306,7 @@
 //                 height={100}
 //                 className=""
 //               /> */}
-//               <div className=" card-1 border border-black w-[454px] h-[574px] ">
+//               <div className=" card-1 border  w-[454px] h-[574px] ">
 
 //                {/* Inner swiper */}
 //                <Swiper
@@ -429,7 +429,7 @@
 //                 height={100}
 //                 className=""
 //               /> */}
-//               <div className=" card-2 border border-black w-[454px] h-[574px]">
+//               <div className=" card-2 border  w-[454px] h-[574px]">
 //                 {/* <p className="card-1 text-center text-lg text-black">Card 1</p> */}
 //                 <Image
 //                   src={"/img-2.png"}
@@ -516,7 +516,7 @@
 //                 height={100}
 //                 className=""
 //               /> */}
-//               <div className=" card-3 border border-black w-[454px] h-[574px]">
+//               <div className=" card-3 border  w-[454px] h-[574px]">
 //                 {/* <p className="card-1 text-center text-lg text-black">Card 1</p> */}
 //                 <Image
 //                   src={"/Img-3.png"}
@@ -536,7 +536,7 @@
 //                 height={100}
 //                 className=""
 //               /> */}
-//               <div className="  card-4 border border-black w-[454px] h-[574px]">
+//               <div className="  card-4 border  w-[454px] h-[574px]">
 //                 {/* <p className="card-1 text-center text-lg text-black">Card 1</p> */}
 //                 <Image
 //                   src={"/card-4.png"}
@@ -577,7 +577,7 @@ import "swiper/css/navigation";
 import {
   CircularProgressbar,
   buildStyles,
-  linearGradient,
+
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -585,10 +585,11 @@ import "react-circular-progressbar/dist/styles.css";
 import { Pagination, Navigation } from "swiper/modules";
 const percentage = 23;
 function FirstSection() {
+   
   const zeroPad = (value, length) => String(value).padStart(length, "0");
   return (
     <>
-      <div className="FirstSection bg-[#ffffff] mt-0 w-[1920px] h-auto">
+      <div className="FirstSection bg-[#ffffff] mt-0 border border-black w-[1920px] h-auto">
         <div className="top flex flex-row justify-between w-auto h-auto pt-10">
           <div className="w-[159px] h-[40px]">
             <p className="font-Lato text-[30px]">FEATURED</p>
@@ -633,23 +634,41 @@ function FirstSection() {
             {/* Card 1 with Nested Swiper */}
 
             <SwiperSlide>
-              <div className="card-1 border border-black w-[454px] h-[574px] ">
+              <div className="card-1  w-[454px] h-[574px] ">
                 <div className="inner-swiper-container mt-0 relative ">
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
-                    style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
-                    navigation={true} // Disable navigation for nested Swiper
+                    
+                    
+        style={{
+
+            "--swiper-pagination-color": "#BE9F56",
+            "--swiper-navigation-color": "#ffffff",
+            "--swiper-pagination-bullet-inactive-color": "#ffffff",
+         
+            "--swiper-pagination-bullet-inactive-opacity": "1",
+            "--swiper-pagination-bullet-size": "16px",
+            "--swiper-pagination-bullet-horizontal-gap": "6px",
+             "--swiper-navigation-color": "#ffffff",
+          }}
+                    navigation={true} 
                     pagination={{
                       clickable: true,
                     }}
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
                   >
-                    <Image
+                    
+                    <SwiperSlide className="relative">
+                      <Image
+                        src={"/card-1.png"}
+                        alt="Building 1"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
                       src={"/New Folder/topGrad.png"}
                       alt="gradient 1"
                       width={100}
@@ -697,8 +716,9 @@ function FirstSection() {
                               text={`${percentage}%`}
                               styles={buildStyles({
                                 textColor: "white",
-                                pathColor: "turquoise",
-                                trailColor: "black",
+                                pathColor: "#BE9F56",    
+                                trailColor: "#1A1A19",
+                              
                               })}
                             />
                           </div>
@@ -712,14 +732,13 @@ function FirstSection() {
                         </div>
                       </div>
                     </div>
-                    <SwiperSlide className="relative">
-                      <Image
-                        src={"/card-1.png"}
-                        alt="Building 1"
-                        width={454}
-                        height={574}
-                        className="w-[454px] h-[574px]"
-                      />
+                    <Image
+                      src={"/New Folder/bottomGrad.png"}
+                      alt="gradient 1"
+                      width={100}
+                      height={100}
+                      className="w-[454px] h-[159px] absolute bottom-0 z-10"
+                    />
                     </SwiperSlide>
                     <SwiperSlide>
                       <Image
@@ -729,6 +748,77 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
+                       <Image
+                      src={"/New Folder/topGrad.png"}
+                      alt="gradient 1"
+                      width={100}
+                      height={100}
+                      className="w-[454px] h-[159px] absolute top-0 z-10"
+                    />
+                    <div className="content">
+                      <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                        <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                          SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                          WC2H
+                          <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                            UNITED KINGDOM
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                        <div className="">
+                          <Image
+                            src={"/navlinks/Group 3005.png"}
+                            alt=""
+                            width={59.82}
+                            height={14.63}
+                            className="w-[59.82px] h-[14.63px]"
+                          />
+                        </div>
+
+                        <div className="Center flex flex-col w-full   ">
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                            {" "}
+                            5,000,000 GBP
+                          </div>
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                            {" "}
+                            #ZM7861234567
+                          </div>
+                        </div>
+
+                        <div className="w-[114px] h-[19px]   text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                          {" "}
+                          <div className=" absolute bottom-[-10px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                            <CircularProgressbar
+                              value={percentage}
+                              text={`${percentage}%`}
+                              styles={buildStyles({
+                                textColor: "white",
+                                pathColor: "#BE9F56",    
+                                trailColor: "#1A1A19",
+                              
+                              })}
+                            />
+                          </div>
+                          <Image
+                            src={"/New Folder/g12.png"}
+                            width={69.28}
+                            height={24.22}
+                            alt=""
+                            className="w-[69.28px] h-[24.22px]"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <Image
+                      src={"/New Folder/bottomGrad.png"}
+                      alt="gradient 1"
+                      width={100}
+                      height={100}
+                      className="w-[454px] h-[159px] absolute bottom-0 z-10"
+                    />
                     </SwiperSlide>
                     <SwiperSlide>
                       <Image
@@ -738,7 +828,70 @@ function FirstSection() {
                         height={574}
                         className="w-[454px] h-[574px]"
                       />
-                    </SwiperSlide>
+                       <Image
+                      src={"/New Folder/topGrad.png"}
+                      alt="gradient 1"
+                      width={100}
+                      height={100}
+                      className="w-[454px] h-[159px] absolute top-0 z-10"
+                    />
+                    <div className="content">
+                      <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                        <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                          SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                          WC2H
+                          <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                            UNITED KINGDOM
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                        <div className="">
+                          <Image
+                            src={"/navlinks/Group 3005.png"}
+                            alt=""
+                            width={59.82}
+                            height={14.63}
+                            className="w-[59.82px] h-[14.63px]"
+                          />
+                        </div>
+
+                        <div className="Center flex flex-col w-full   ">
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                            {" "}
+                            5,000,000 GBP
+                          </div>
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                            {" "}
+                            #ZM7861234567
+                          </div>
+                        </div>
+
+                        <div className="w-[114px] h-[19px]   text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                          {" "}
+                          <div className=" absolute bottom-[-10px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                            <CircularProgressbar
+                              value={percentage}
+                              text={`${percentage}%`}
+                              styles={buildStyles({
+                                textColor: "white",
+                                pathColor: "#BE9F56",    
+                                trailColor: "#1A1A19",
+                              
+                              })}
+                            />
+                          </div>
+                          <Image
+                            src={"/New Folder/g12.png"}
+                            width={69.28}
+                            height={24.22}
+                            alt=""
+                            className="w-[69.28px] h-[24.22px]"
+                          />
+                        </div>
+                      </div>
+                    </div>
                     <Image
                       src={"/New Folder/bottomGrad.png"}
                       alt="gradient 1"
@@ -746,7 +899,10 @@ function FirstSection() {
                       height={100}
                       className="w-[454px] h-[159px] absolute bottom-0 z-10"
                     />
+                    </SwiperSlide>
+                    
                   </Swiper>
+             
                 </div>
                 <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
                   <Countdown
@@ -791,21 +947,47 @@ function FirstSection() {
                       </div>
                     )}
                   />
-                </div>
+               <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div> 
+                    </div>
+              
               </div>
             </SwiperSlide>
+
             {/* Card 2 with Nested Swiper */}
             <SwiperSlide>
-              <div className="card-2 border border-black w-[454px] h-[574px]">
+              <div className="card-2  w-[454px] h-[574px]">
                 {/* Nested Swiper inside Card 2 */}
                 <div className="inner-swiper-container mt-0">
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
                     style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
                     navigation={true}
                     pagination={{
                       clickable: true,
@@ -813,21 +995,7 @@ function FirstSection() {
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
                   >
-                    {/* <Image
-                      src={"/New Folder/topGrad.png"}
-                      alt="gradient 1"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute top-0 z-20"
-                    />
-
-                    <Image
-                      src={"/New Folder/bottomGrad.png"}
-                      alt="gradient 2"
-                      width={100}
-                      height={100}
-                      className="w-[454px] h-[159px] absolute bottom-0 z-20"
-                    /> */}
+                 
                     <SwiperSlide>
                       <Image
                         src={"/img-2.png"}
@@ -892,8 +1060,8 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "turquoise",
-                                  trailColor: "black",
+                                  pathColor: "#BE9F56",            
+                                  trailColor: "#1A1A19"
                                 })}
                               />
                             </div>
@@ -973,8 +1141,8 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "turquoise",
-                                  trailColor: "black",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
                                 })}
                               />
                             </div>
@@ -1059,16 +1227,22 @@ function FirstSection() {
 
             {/* Card 3 with Nested Swiper */}
             <SwiperSlide>
-              <div className="card-3 border border-black w-[454px] h-[574px]">
+              <div className="card-3  w-[454px] h-[574px]">
                 {/* Nested Swiper inside Card 3 */}
                 <div className="inner-swiper-container mt-0">
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
                     style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
                     navigation={true}
                     pagination={{
                       clickable: true,
@@ -1140,8 +1314,8 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "turquoise",
-                                  trailColor: "black",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
                                 })}
                               />
                             </div>
@@ -1222,8 +1396,8 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "turquoise",
-                                  trailColor: "black",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
                                 })}
                               />
                             </div>
@@ -1308,19 +1482,26 @@ function FirstSection() {
 
             {/* Card 4 with Nested Swiper */}
             <SwiperSlide>
-              <div className="card-4 border border-black w-[454px] h-[574px]">
+              <div className="card-4 border  w-[454px] h-[574px]">
                 {/* Nested Swiper inside Card 4 */}
                 <div className="inner-swiper-container mt-0">
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
                     style={{
-                      "--swiper-navigation-color": "#fff",
-                      "--swiper-pagination-color": "#fff",
-                    }}
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
                     navigation={true}
                     pagination={{
                       clickable: true,
+                      
                     }}
                     modules={[Pagination, Navigation]}
                     className="inner-swiper"
@@ -1348,7 +1529,7 @@ function FirstSection() {
                         height={100}
                         className="w-[454px] h-[159px] absolute bottom-0 z-20"
                       />
-                      <div className="content">
+                      <div className="content ">
                         <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
                           <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
                             SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
@@ -1389,8 +1570,8 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "turquoise",
-                                  trailColor: "black",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
                                 })}
                               />
                             </div>
@@ -1470,9 +1651,9 @@ function FirstSection() {
                                 text={`${percentage}%`}
                                 styles={buildStyles({
                                   textColor: "white",
-                                  pathColor: "#F8E231",
-                                  trailColor: "#000000",
-                                  // trailColor: "linear-gradient(to right,#000000, #BE9F56)",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
                                 })}
                               />
                             </div>
@@ -1487,6 +1668,7 @@ function FirstSection() {
                         </div>
                       </div>
                     </SwiperSlide>
+                    
                   </Swiper>
                 </div>
 
@@ -1556,15 +1738,1298 @@ function FirstSection() {
               </div>
             </SwiperSlide>
 
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+              {/* Card 5 with Nested Swiper */}
+              <SwiperSlide>
+              <div className="card-4 border  w-[454px] h-[574px]">
+                {/* Nested Swiper inside Card 4 */}
+                <div className="inner-swiper-container mt-0">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    style={{
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
+                    navigation={true}
+                    pagination={{
+                      clickable: true,
+                      
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="inner-swiper"
+                  >
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/5.png"}
+                        alt="Building 4"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content ">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/5.png"}
+                        alt="Building 3"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    
+                  </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+             {/* Card 6 with Nested Swiper */}
+            <SwiperSlide>
+              <div className="card-4 border  w-[454px] h-[574px]">
+                {/* Nested Swiper inside Card 4 */}
+                <div className="inner-swiper-container mt-0">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    style={{
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
+                    navigation={true}
+                    pagination={{
+                      clickable: true,
+                      
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="inner-swiper"
+                  >
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/6.png"}
+                        alt="Building 4"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content ">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/7.png"}
+                        alt="Building 3"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    
+                  </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+      {/* Card 7 with Nested Swiper */}
+      <SwiperSlide>
+              <div className="card-4 border  w-[454px] h-[574px]">
+                {/* Nested Swiper inside Card 4 */}
+                <div className="inner-swiper-container mt-0">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    style={{
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
+                    navigation={true}
+                    pagination={{
+                      clickable: true,
+                      
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="inner-swiper"
+                  >
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/7.png"}
+                        alt="Building 4"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content ">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/8.png"}
+                        alt="Building 3"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    
+                  </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+     </SwiperSlide>
+
+             {/* Card 8 with Nested Swiper */}
+            <SwiperSlide>
+              <div className="card-4 border  w-[454px] h-[574px]">
+                {/* Nested Swiper inside Card 4 */}
+                <div className="inner-swiper-container mt-0">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    style={{
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
+                    navigation={true}
+                    pagination={{
+                      clickable: true,
+                      
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="inner-swiper"
+                  >
+                    <SwiperSlide>
+                      <Image
+                        src={"/New Folder/8.png"}
+                        alt="Building 4"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content ">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <Image
+                        src={"/Img-3.png"}
+                        alt="Building 3"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    
+                  </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            {/* Card 9 with Nested Swiper */}
+            <SwiperSlide>
+              <div className="card-4 border  w-[454px] h-[574px]">
+                {/* Nested Swiper inside Card 4 */}
+                <div className="inner-swiper-container mt-0">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    style={{
+
+                        "--swiper-pagination-color": "#BE9F56",
+                        "--swiper-pagination-bullet-inactive-color": "#ffffff",
+                     
+                        "--swiper-pagination-bullet-inactive-opacity": "1",
+                        "--swiper-pagination-bullet-size": "16px",
+                        "--swiper-pagination-bullet-horizontal-gap": "6px",
+                         "--swiper-navigation-color": "#ffffff",
+                      }}
+                    navigation={true}
+                    pagination={{
+                      clickable: true,
+                      
+                    }}
+                    modules={[Pagination, Navigation]}
+                    className="inner-swiper"
+                  >
+                    <SwiperSlide>
+                      <Image
+                        src={"/card-4.png"}
+                        alt="Building 4"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content ">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[80px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",
+                                  trailColor: "#1A1A19"
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/Yellow.png"}
+                              width={40.36}
+                              height={40.36}
+                              alt=""
+                              className="w-[40.36px] h-[40.36px] ml-10"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <Image
+                        src={"/Img-3.png"}
+                        alt="Building 3"
+                        width={454}
+                        height={574}
+                        className="w-[454px] h-[574px]"
+                      />
+                      <Image
+                        src={"/New Folder/topGrad.png"}
+                        alt="gradient 1"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute top-0 z-20"
+                      />
+
+                      <Image
+                        src={"/New Folder/bottomGrad.png"}
+                        alt="gradient 2"
+                        width={100}
+                        height={100}
+                        className="w-[454px] h-[159px] absolute bottom-0 z-20"
+                      />
+                      <div className="content">
+                        <div className="w-[374px] h-[42px]  absolute bottom-14 left-9 z-20">
+                          <div className="absolute top-0 left-4 z-20 text-white font-Lato text-[13px] tracking-widest ">
+                            SHELTON STREET {""} COVENT GARDEN {""} LONDON {""}{" "}
+                            WC2H
+                            <div className="text-white font-Lato text-[13px]  tracking-widest absolute top-6 left-[120px] z-20 ">
+                              UNITED KINGDOM
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-row justify-between w-full h-auto  absolute bottom-8 z-20 px-10">
+                          <div className="">
+                            <Image
+                              src={"/navlinks/Group 3005.png"}
+                              alt=""
+                              width={59.82}
+                              height={14.63}
+                              className="w-[59.82px] h-[14.63px]"
+                            />
+                          </div>
+
+                          <div className="flex flex-col w-full   ">
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-40 z-20">
+                              {" "}
+                              5,000,000 GBP
+                            </div>
+                            <div className="w-[114px] h-[19px]  text-white font-Lato text-[9px] absolute top-6 left-[185px]  z-20">
+                              {" "}
+                              #ZM7861234567
+                            </div>
+                          </div>
+
+                          <div className="w-[114px] h-[19px]  text-white font-Lato text-[14px] absolute top-0 right-0  z-20">
+                            {" "}
+                            <div className=" absolute bottom-[-12px] right-[110px] w-[35.95px] h-[35.95px] mr-4">
+                              <CircularProgressbar
+                                value={percentage}
+                                text={`${percentage}%`}
+                                styles={buildStyles({
+                                  textColor: "white",
+                                  pathColor: "#BE9F56",                             
+                                  trailColor: "#1A1A19",
+                                  // trailColor: "linea#1A1A19"gradient(to right,#000000, #BE9F56)",
+                                })}
+                              />
+                            </div>
+                            <Image
+                              src={"/New Folder/g12.png"}
+                              width={69.28}
+                              height={24.22}
+                              alt=""
+                              className="w-[69.28px] h-[24.22px]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    
+                  </Swiper>
+                </div>
+
+                <div className="countdown-container absolute top-0 left-0 w-full h-auto bg-transparent text-white flex justify-center items-center z-20 py-2">
+                  <Countdown
+                    date={new Date(Date.now() + 3029993784)} // Example countdown time
+                    renderer={({ days, hours, minutes, seconds }) => (
+                      <div className="flex justify-between w-[390.41px] h-[59.77px] ">
+                        <div className="flex flex-col  items-center w-[57.85px] h-[59.76px]   relative">
+                          <span className="text-4xl w-[57px] h-[37px] font-Lato absolute top-0 left-2">
+                            {zeroPad(days, 2)}
+                          </span>
+                          <span className="text-sm mt-1  mr-[21px] w-[9px] h-[32px] font-Lato absolute bottom-[-15px]">
+                            DAYS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col  items-center relative">
+                          <span className="text-4xl  w-[60px] h-[37px] font-Lato ml-3">
+                            {zeroPad(hours, 2)}
+                          </span>
+                          <span className="text-sm mt-1 H-[9px] W-[46px] font-Lato absolute bottom-0 ">
+                            HOURS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center  ">
+                          <span className="text-4xl h-[37px] w-[60px] font-Lato text-center">
+                            {zeroPad(minutes, 2)}
+                          </span>
+                          <span className="text-sm h-[9px] mt-1 w-[61px] font-Lato text-center">
+                            MINS
+                          </span>
+                        </div>
+
+                        <div className="flex flex-col items-center ">
+                          <span className="text-4xl h-[37px] w-[56px] font-Lato text-center">
+                            {zeroPad(seconds, 2)}
+                          </span>
+                          <span className="text-sm h-[10px] w-[64px] font-Lato text-center mt-1">
+                            SECONDS
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  />
+
+                  <div className="SHARE absolute top-20 right-6 w-[73.41pxpx] h-[23px] ">
+                    <div className="flex flex-row gap-x-6">
+                      <Image
+                        src={"/New Folder/share.png"}
+                        width={20.44}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                      <Image
+                        src={"/New Folder/heart.png"}
+                        width={25.88}
+                        height={23}
+                        alt=""
+                        className="w-[25.88px] h-[23px] "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
           </Swiper>
         </div>
 
-        <div className="flex  gap-x-4 px-12 border border-black mt-4 ">
+        <div className="flex  gap-x-4 px-12  mt-4 ">
           <div className="w-[454px] h-[58.17px] bg-[#333] relative  rounded-xl">
             <div className=" relative  w-[346px] h-[26px]  mx-8 my-4">
               <p className="absolute left-0 text-white font-Lato text-[19px]">

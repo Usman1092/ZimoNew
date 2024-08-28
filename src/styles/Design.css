@@ -64,3 +64,38 @@
     left: 50%;
     transform: translateX(-50%);
  */ } 
+
+
+
+ /* .swiper-pagination-bullet{
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  opacity: 1;
+ } */
+
+
+
+
+ /* .swiper-pagination-bullet{
+  background: white;
+  width: 5rem;
+  height: 1rem;
+  border-radius: .5rem;
+  opacity: 1;
+  
+}
+
+.swiper-pagination-bullet-active {
+background-color: blue;
+width:5rem;
+height:1rem;;
+border-radius: .5rem;
+  opacity: 1;
+  
+} */
+
+
+

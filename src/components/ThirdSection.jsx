@@ -4,18 +4,22 @@ export const ThirdSection = () => {
   return (
     <div className="ThirdSection bg-[#fff] flex  justify-center text-center w-[1920px] h-auto pt-10">
       <div className="w-[1833.59px] h-[867.95px]  relative ">
-        <div className=" relative flex flex-row justify-between">
-          <div className="w-[657px] h-[131px]relative    ">
+        {/* <div className=" relative xs:flex flex-col gap-y-5  sm:flex flex-col gap-y-5  md:flex flex-row justify-between  3xl:flex flex-row justify-between"> */}
+        <div class="relative flex flex-col gap-y-5 xs:flex-col sm:flex-col md:flex-row justify-between lg:flex-row justify-between">
+       
+          <div className=" w-[657px] h-[131px] relative  ">
             <p className="font-Lato text-[40px] font-bold text-start absolute top-0 left-0">
               Weekly NewsLetter
             </p>
-            <div className="w-[657px] h-[57px] font-Lato text-[20px] absolute bottom-0 left-0 text-left>">
+
+            <p className="w-[657px] h-[57px] font-Lato text-[20px] absolute bottom-0 left-0 text-left>">
               Receive the beautifully curated selection of the latest listings
               from around the world and find out what`s trending
-            </div>
+            </p>
+
           </div>
 
-          <div className="w-[500px] h-[189.51px]    flex flex-col ">
+          <div className="w-[500px] h-[189.51px]    ">
             <p className="font-Lato text-[20px] ml-[-10px] font-bold w-[180px] h-[27px] ">
               EMAIL ADDRESS
             </p>
@@ -28,7 +32,7 @@ export const ThirdSection = () => {
           </div>
         </div>
 
-        <div className="w-[493px] h-[49px] absolute right-2   ">
+        <div className="w-[493px] h-[49px] md:absolute right-2   ">
           <p className="font-Lato text-[14px] mt-5  ml-[0px]">
             {" "}
             BY SHARING YOUR EMAIL, YOU ARE CONFIRMING THAT YOU AGREE TO OUR{" "}
@@ -37,18 +41,18 @@ export const ThirdSection = () => {
           </p>
         </div>
 
-        <div className="Links flex flex-row w-full justify-between mt-[150px] ">
-          <div className="COL-1 flex flex-col">
+        <div className="Links mt-[10px] flex flex-col md:flex-row  md:flex-row w-full justify-between  sm:mt-[80px] md:mt-[150px] ">
+          <div className="COL-1 flex flex-row md:flex-col">
             <heading className="font-Lato text-[18px] font-bold text-start">
               ZIMOPRO.COM
             </heading>
-            <div className="links pt-10  space-y-10">
-              <p className="font-Lato text-[18px] text-start">ABOUT</p>
-              <p className="font-Lato text-[18px] text-start">CONTACT</p>
-              <p className="font-Lato text-[18px] text-start">HELP & FAQ</p>
+            <div className="links pl-4 flex flex-row md:flex-col sm:pl-0 md:pl-0 space-x-4 sm:space-x-5  md:space-x-10">
+              <p className="font-Lato text-[18px] text-center">ABOUT</p>
+              <p className="font-Lato text-[18px] text-center">CONTACT</p>
+              <p className="font-Lato text-[18px] text-center">HELP & FAQ</p>
 
-              <div className="flex flex-col space-y-14">
-                <div className="w-[233.98px] relative h-[76.37px]  ">
+              <div className="flex flex-row md:flex-col space-x-4 md:space-x-14">
+                <div className="relative  w-[233.98px]  h-[76.37px] ">
                   <p className="font-Lato absolute top-0 left-0 text-[5px]">
                     FOR PROPERTY AGENT ONLY
                   </p>
@@ -57,14 +61,14 @@ export const ThirdSection = () => {
                     alt=""
                     width={215.84}
                     height={58.37}
-                    className="absolute bottom-0 w-[215.84px] h-[58.37px]"
+                    className="absolute bottom-0 w-[50%] h-auto sm:w-[40%] h-auto md:w-[215.84px] h-[58.37px]"
                   />
                   <Image
                     src={"/THIRDSECTION/PRO.png"}
                     alt=""
                     width={22.45}
                     height={22.45}
-                    className="absolute top-4 right-0 w-[22.45px] h-[22.45px]"
+                    className="absolute top-4 right-0 xd:w-[7%] h-auto sm:w-[5%] h-auto   md:w-[22.45px] h-[22.45px]"
                   />
                 </div>
 
@@ -77,25 +81,25 @@ export const ThirdSection = () => {
                     alt=""
                     width={145.91}
                     height={31.24}
-                    className="absolute bottom-0 w-[145.91px] h-[31.24px]"
+                    className="absolute bottom-0 w-[145.91px] h-[31.24px] sm:w-sm xs:w-xs"
                   />
                   <Image
                     src={"/ces.png"}
                     alt=""
                     width={65.15}
                     height={31.24}
-                    className="absolute bottom-0 right-0  w-[65.15px] h-[31.24px]"
+                    className="absolute bottom-0 right-0  w-[65.15px] h-[31.24px] sm:w-sm xs:w-xs"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="COL-2 flex flex-col  ">
-            <heading className="font-Lato font-bold text-start">
+          <div className="COL-2 flex flex-row md:flex-col  ">
+            <heading className="font-Lato font-bold text-start pt-4 md:pt-0">
               CATEGORIES
             </heading>
-            <div className="links pt-10  space-y-6">
+            <div className="links pl-4  pt-4 md:pt-0 flex flex-row md:flex-col   sm:pl-8 md:pl-10  space-x-4 sm:space-x-5  md:space-x-10">
               <p className="font-Lato text-[18px] text-start">REAL ESTATE</p>
               <p className="font-Lato text-[18px] text-start">
                 PRIVATE ISLANDS
@@ -111,11 +115,11 @@ export const ThirdSection = () => {
             </div>
           </div>
 
-          <div className="COL-3 flex flex-col  ">
-            <heading className="font-Lato font-bold text-start">
+          {/* <div className="COL-3 flex flex-col  ">
+            <heading className="font-Lato font-bold text-start pt-4 md:pt-0">
               BUSINESS / AGENTS
             </heading>
-            <div className="links pt-10 space-y-8">
+            <div className="links pt-4 sm:pt-8 md:pt-10  xs:space-y-4 sm:space-y-5  md:space-y-10">
               <p className="font-Lato text-[18px] text-start">LIST WITH US</p>
               <p className="font-Lato text-[18px] text-start">PARTNER</p>
               <p className="font-Lato text-[18px] text-start">
@@ -123,61 +127,78 @@ export const ThirdSection = () => {
               </p>
               <p className="font-Lato text-[18px] text-start">INVESTERS</p>
             </div>
+          </div> */}
+          
+          <div className="COL-3 flex flex-row md:flex-col  ">
+            <heading className="font-Lato font-bold text-start pt-4 md:pt-0">
+              BUSINESS AGENTS
+            </heading>
+            <div className="links pl-4  pt-4 md:pt-0 flex flex-row md:flex-col   sm:pl-8 md:pl-10  space-x-4 sm:space-x-5  md:space-x-10">
+              <p className="font-Lato text-[18px] text-left">LIST WITH US</p>
+              <p className="font-Lato text-[18px] text-start">
+                PARTNERS
+              </p>
+              <p className="font-Lato text-[18px] text-start">DISPLAY ADVERTISING</p>
+              <p className="font-Lato text-[18px] text-start">INVESTERS</p>
+            </div>
           </div>
           <div className="COL-4 flex flex-col  ">
-            <heading className="font-Lato font-bold text-left">
+            <heading className="font-Lato font-bold text-left pt-4 md:pt-0">
               SELL YOUR HOME
             </heading>
-            <p className="font-Lato text-[18px] pt-5 text-start">
+            <p className="font-Lato text-[18px] pt-2 md:pt-5 text-start">
               FIND A ZIMO AGENT
             </p>
 
-            <heading className="font-Lato font-bold pt-10 text-left">
+            <heading className="font-Lato font-bold pt-4 md:pt-10 text-left">
               GIFT CARD
             </heading>
-            <p className="font-Lato text-[18px] pt-5 text-start">
+            <p className="font-Lato text-[18px] pt-2 md:pt-5 text-start">
               PURCHASE eGIFT CARD
             </p>
           </div>
 
-          <div className="COL-5 flex flex-col  ">
-            <heading className="font-Lato font-bold text-left">
+          <div className="COL-5 flex flex-row md:flex-col  ">
+            <heading className="font-Lato font-bold text-left pt-8 md:pt-0">
               SUPPORTED CHARITIES
             </heading>
-            <div className="logos mt-10 space-y-8">
+            <div className="logos flex flex-row ml-10 md:flex-col mb-2 space-x-8 md:space-y-8">
               <Image
                 src={"/THIRDSECTION/uni.png"}
                 alt=""
                 width={166.58}
                 height={40}
-                className="mt-0 w-[166.58px] h-[40px]"
+                className="mt-0 w-[130px] h-auto sm:w-[150px] h-auto md:w-[166.58px] h-[40px] "
               />
               <Image
                 src={"/THIRDSECTION/world.png"}
                 alt=""
                 width={193.78}
                 height={40}
-                className="mt-5 w-[193.78px] h-[40px]"
+                className="mt-5 w-[158px] h-auto  sm:w-[178px] h-auto md:w-[193.78px] h-[40px]"
               />
               <Image
                 src={"/THIRDSECTION/save.png"}
                 alt=""
                 width={196.82}
                 height={40}
-                className="mt-5 w-[196.82px] h-[40px]"
+                className="mt-5 w-[156px] h-auto  sm:w-[176px] h-auto  md:w-[196.82px] h-[40px]"
               />
               <Image
                 src={"/THIRDSECTION/great.png"}
                 alt=""
                 width={166.28}
                 height={84.87}
-                className="mt-5 w-[166.58px] h-[84.87px]"
+                className="mt-5 w-[131px] h-auto sm:w-[151px] h-auto md:w-[166.58px] h-[84.87px]"
               />
             </div>
           </div>
         </div>
 
-        <div className="bottom flex flex-row justify-between ">
+
+
+     {/* last copyright line  */}
+        <div className=" flex flex-row justify-between border border-black   ">
           <div className="w-[479px] h-[19px] absolute  bottom-0  flex flex-row justify-between">
             <div className="flex flex-row justify-center items-center">
               <Image
